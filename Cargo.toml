@@ -1,0 +1,10 @@
+[package]
+name = "tui_todo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+crossterm = "0.27.0"
+serde = { version = "1.0.203", features = ["derive"] }
+serde_json = "1.0.117"
+tui = "0.19.0"
