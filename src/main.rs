@@ -37,7 +37,7 @@ impl App {
             search_txt: String::new(),
             new_task: String::new(),
             default_style: Style::default().fg(Color::White).bg(Color::Black),
-            db_path: env::var("TODO_DB").unwrap_or_else(|_| panic!("Please create a variable named TODO_DB in your environment variables and put your json file name in it.")),
+            db_path: env::var("TODO_DB").unwrap_or_else(|_| panic!("Please create a variable named TODO_DB in your environment variables and put your json file path in it.")),
         }
     }
 }
@@ -130,7 +130,11 @@ fn run_app<B: Backend>(terminal: &mut Terminal<B>, app: &mut App) -> io::Result<
                             }
                             KeyCode::Delete => {
                                 if let Some(index) = app.list_state.selected() {
-                                    app.tasks.remove(index);
+                                    let task = app.tasks.get(index);
+                                    if let Some(_) = task {
+                                        app.tasks.remove(index);
+                                    }
+                                    
                                     if index > 0 {
                                         app.list_state.select(Some(index - 1));
                                     }

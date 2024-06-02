@@ -1,5 +1,5 @@
 [package]
-name = "tui_todo"
+name = "todo"
 version = "0.1.0"
 edition = "2021"
 

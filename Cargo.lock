@@ -254,6 +254,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "todo"
+version = "0.1.0"
+dependencies = [
+ "crossterm 0.27.0",
+ "serde",
+ "serde_json",
+ "tui",
+]
+
+[[package]]
 name = "tui"
 version = "0.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -264,16 +274,6 @@ dependencies = [
  "crossterm 0.25.0",
  "unicode-segmentation",
  "unicode-width",
-]
-
-[[package]]
-name = "tui_todo"
-version = "0.1.0"
-dependencies = [
- "crossterm 0.27.0",
- "serde",
- "serde_json",
- "tui",
 ]
 
 [[package]]
